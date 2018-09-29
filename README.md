@@ -1,4 +1,5 @@
-🐋 baleeneate - a docker image for Delineate
+🐋 *baleeneate* - a docker image for [Delineate](delineate.sourceforge.net)
 
-Launch ./spla.sh
+💧 Just launch `./spla.sh` 
 
+Full description on [Docker Hub](https://hub.docker.com/r/valepert/baleeneate/)
