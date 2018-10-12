@@ -1,11 +1,12 @@
-# baleeneate v0.0.1
+# baleeneate v0.0.2
 FROM debian:wheezy
 
 # also install ca-certificates for wget
 RUN apt-get update \
-&& apt-get -y install autotrace potrace \
-&& apt-get -y install default-jdk \
-&& apt-get -y install wget \
+&& apt-get -y --no-install-recommends install autotrace potrace \
+&& apt-get -y --no-install-recommends install default-jdk \
+&& apt-get -y --no-install-recommends install wget \
+&& rm -rf /var/lib/apt/lists/* \
 && wget 'http://prdownloads.sourceforge.net/delineate/delineate-0.5.tar.gz?download' -O delineate-0.5.tar.gz \
 && tar xzf delineate-0.5.tar.gz \
 && wget 'http://www.apache.org/dist/xalan/xalan-j/binaries/xalan-j_2_7_2-bin.tar.gz' \
