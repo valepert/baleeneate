@@ -1,4 +1,4 @@
-# baleeneate v0.0.2
+# baleeneate v0.0.3
 FROM debian:wheezy
 
 # also install ca-certificates for wget
@@ -15,8 +15,9 @@ RUN apt-get update \
 && jar xf xalan.jar org \
 && cd /delineate/0.5 \
 && mv /xalan-j_2_7_2/org org \
-&& jar uf delineate.jar org \
-&& touch settings/settings-autotrace.prop settings/settings-potrace.prop settings/settings.prop && echo "potrace=/usr/bin/potrace" >> settings/settings.prop && echo "autotrace=/usr/bin/autotrace" >> settings/settings.prop # TODO: create and copy .prop files
+&& jar uf delineate.jar org
+
+COPY settings.prop /delineate/0.5/settings
 
 WORKDIR /delineate/0.5
 
