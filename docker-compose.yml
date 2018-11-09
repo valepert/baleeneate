@@ -2,6 +2,7 @@ version: '2'
 
 services:
   baleeneate:
+    image: valepert/baleeneate
     build: .
     volumes:
     - /tmp/.X11-unix:/tmp/.X11-unix
